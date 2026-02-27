@@ -44,20 +44,20 @@ body:
     validations:
       required: true
 
-  - type: checkboxes
-    id: server_env
+  # ==========================================
+  # ここから環境情報のグループ（視覚的な区切り）
+  # ==========================================
+  - type: markdown
     attributes:
-      label: "🖥️ サーバー環境"
-      description: "不具合が発生した環境を選択してください（複数選択可）。"
-      options:
-        - label: "production（本番）"
-        - label: "staging（STG）"
-        - label: "development（ローカル）"
+      value: |
+        ---
+        ## 🖥️ 環境情報
+        不具合が発生した環境について、わかる範囲でご記入・選択してください。
 
   - type: input
     id: browser
     attributes:
-      label: "🌐 ブラウザ"
+      label: "ブラウザ"
       placeholder: "例: Chrome 120.0, Safari 17.1"
     validations:
       required: false
@@ -65,7 +65,7 @@ body:
   - type: input
     id: os
     attributes:
-      label: "💻 OS"
+      label: "OS"
       placeholder: "例: macOS Sonoma, Windows 11"
     validations:
       required: false
@@ -73,10 +73,23 @@ body:
   - type: input
     id: branch
     attributes:
-      label: "🌿 ブランチ"
+      label: "ブランチ"
       placeholder: "例: main, feature/login-update"
     validations:
       required: false
+
+  - type: checkboxes
+    id: server_env
+    attributes:
+      label: "サーバー環境"
+      description: "該当する環境をすべて選択してください。"
+      options:
+        - label: "production（本番）"
+        - label: "staging（STG）"
+        - label: "development（ローカル）"
+  # ==========================================
+  # 環境情報のグループここまで
+  # ==========================================
 
   - type: textarea
     id: logs
