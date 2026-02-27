@@ -44,52 +44,21 @@ body:
     validations:
       required: true
 
-  # ==========================================
-  # ここから環境情報のグループ（視覚的な区切り）
-  # ==========================================
-  - type: markdown
+  - type: textarea
+    id: environment
     attributes:
+      label: "🖥️ 環境情報"
+      description: "不具合が発生した環境について、わかる範囲でご記入・チェック（[x]）してください。"
       value: |
-        ---
-        ## 🖥️ 環境情報
-        不具合が発生した環境について、わかる範囲でご記入・選択してください。
-
-  - type: input
-    id: browser
-    attributes:
-      label: "ブラウザ"
-      placeholder: "例: Chrome 120.0, Safari 17.1"
+        - **ブラウザ**: 
+        - **OS**: 
+        - **ブランチ**: 
+        - **サーバー環境**:
+          - [ ] production（本番）
+          - [ ] staging（STG）
+          - [ ] development（ローカル）
     validations:
       required: false
-
-  - type: input
-    id: os
-    attributes:
-      label: "OS"
-      placeholder: "例: macOS Sonoma, Windows 11"
-    validations:
-      required: false
-
-  - type: input
-    id: branch
-    attributes:
-      label: "ブランチ"
-      placeholder: "例: main, feature/login-update"
-    validations:
-      required: false
-
-  - type: checkboxes
-    id: server_env
-    attributes:
-      label: "サーバー環境"
-      description: "該当する環境をすべて選択してください。"
-      options:
-        - label: "production（本番）"
-        - label: "staging（STG）"
-        - label: "development（ローカル）"
-  # ==========================================
-  # 環境情報のグループここまで
-  # ==========================================
 
   - type: textarea
     id: logs
