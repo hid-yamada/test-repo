@@ -1,4 +1,4 @@
-name: "🤖[Copilot対応] 機能リクエスト-yml"
+name: "🤖機能リクエスト-yml"
 description: Copilotを利用してプロジェクトに対する新しい機能を追加する
 title: "[CU-XXXX] 機能名"
 labels: ["enhancement", "copilot-task"]

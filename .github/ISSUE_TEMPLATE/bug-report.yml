@@ -3,10 +3,6 @@ description: "不具合の報告"
 title: "[BUG] "
 labels: ["bug"]
 body:
-  - type: markdown
-    attributes:
-      value: "不具合のご報告ありがとうございます。AI（Copilot）がスムーズに原因を特定し修正案を出せるよう、可能な限り詳細にご記入ください。"
-
   - type: textarea
     id: description
     attributes:
