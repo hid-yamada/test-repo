@@ -1,0 +1,160 @@
+name: "[Copilot対応] 機能リクエスト-yml"
+description: Copilotを利用してプロジェクトに対する新しい機能を追加する
+title: "[CU-XXXX] 機能名"
+labels: ["enhancement", "copilot-task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 🤖 Copilotへの指示事項（システムルール）
+        - **ガイドラインの遵守**: `.github/copilot-instructions.md` に準拠すること。
+        - **ターゲットブランチ**: `xxxx` ブランチに対して実装・修正を行うこと。
+        - **言語設定**: Pull Request内の説明、コミットメッセージ、コード内のコメントはすべて「日本語」で記述すること。
+        - **ブランチ命名規則**: ブランチを作成する際は、必ず `CU-XXXX` （Issueタイトルのプレフィックスと一致）の名称で作成すること。
+
+  - type: markdown
+    attributes:
+      value: "---"
+
+  - type: markdown
+    attributes:
+      value: "### 📖 背景と目的（コンテキスト）"
+
+  - type: textarea
+    id: background
+    attributes:
+      label: 現状の課題
+      description: 現在どのような問題や不便さがありますか？
+      placeholder: |
+        例：現在のシステムでは〇〇ができず、△△の作業に時間がかかっている
+    validations:
+      required: true
+
+  - type: textarea
+    id: purpose
+    attributes:
+      label: 機能の目的
+      description: この機能で何を実現したいですか？
+      placeholder: |
+        例：〇〇を自動化し、作業効率を向上させたい
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "### ✨ 仕様と期待する動作（要件定義）"
+
+  - type: textarea
+    id: specifications
+    attributes:
+      label: 実装すべき機能の詳細
+      description: 具体的な機能仕様を箇条書きで記載してください
+      placeholder: |
+        1. ユーザーが〇〇画面で△△を入力できる
+        2. 入力された情報は□□として保存される
+        3. 保存後、××画面にリダイレクトされる
+      value: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "### ✅ 受け入れ条件（Acceptance Criteria）"
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: この機能が完了したと判断できる条件
+      description: テスト可能な形で、実装完了の基準を記載してください
+      placeholder: |
+        - [ ] 〇〇画面で△△が表示される
+        - [ ] ××の操作を行うと、□□が実行される
+        - [ ] エラー時に適切なメッセージが表示される
+      value: |
+        - [ ] 
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        
+        ### 📂 対象モジュールとファイル情報
+
+  - type: checkboxes
+    id: target_modules
+    attributes:
+      label: 対象モジュール
+      description: 該当するモジュールにチェックを入れてください（複数選択可）
+      options:
+        - label: "default - ホーム画面、エラーハンドリング (`/default/`)"
+        - label: "login - 認証、パスワード管理 (`/login/`)"
+        - label: "admission - 入学手続き管理 (`/admission/`)"
+        - label: "student - 学籍情報管理 (`/student/`)"
+        - label: "lesson - 履修・カリキュラム・シラバス管理 (`/lesson/`)"
+        - label: "cuext - 公開学習（エクステンション） (`/cuext/`)"
+        - label: "system - システム管理（お知らせ、イベント等） (`/system/`)"
+
+  - type: markdown
+    attributes:
+      value: "#### 実装対象・参照ファイル"
+
+  - type: textarea
+    id: target_files
+    attributes:
+      label: 新規作成・変更するファイル
+      description: Copilotが作成または修正するファイルパスを記載してください
+      placeholder: |
+        - controllers/xxx/XxxController.php
+        - models/xxx/XxxModel.php
+        - smarty/templates/xxx/xxx.html
+    validations:
+      required: false
+
+  - type: textarea
+    id: reference_files
+    attributes:
+      label: 参考にすべき既存実装（コーディングパターン）
+      description: Copilotが参考にすべき既存のファイルパスを記載してください
+      placeholder: |
+        - Controller: controllers/admission/Admission_StatusController.php
+        - Model: models/admission/Admission_StatusModel.php
+        - Template: smarty/templates/admission/status/status.html
+      value: |
+        - Controller: `例: controllers/admission/Admission_StatusController.php`
+        - Model: `例: models/admission/Admission_StatusModel.php`
+        - Template: `例: smarty/templates/admission/status/status.html`
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: "---"
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: ⚠️ 制約事項・非機能要件
+      description: セキュリティ、パフォーマンス、互換性などの制約があれば記載してください
+      placeholder: |
+        - 既存のXXX機能との互換性を保つこと
+        - レスポンスタイムは3秒以内であること
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_info
+    attributes:
+      label: 📎 追加情報
+      description: スクリーンショット、モックアップ、参考URLなど、その他の補足情報を記載してください
+      placeholder: |
+        - スクリーンショット: (画像を貼り付け)
+        - 参考URL: https://...
+    validations:
+      required: false

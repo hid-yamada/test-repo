@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 実装ガイド
+    url: https://github.com/Cyber-University-Inc-Business-System/cumanagement/blob/master/.github/copilot-instructions.md
+    about: cumanagementプロジェクト実装ガイドライン
