@@ -1,12 +1,12 @@
 ---
-name: "[Copilot対応] 機能リクエスト-md"
+name: "🤖[Copilot対応] 機能リクエスト-md"
 about: Copilotを利用してプロジェクトに対する新しい機能を追加する
 title: "[CU-XXXX] 機能名"
 labels: enhancement, copilot-task
 assignees: ''
 ---
 
-### 🤖 Copilotへの指示事項（システムルール）
+### 🤖 Copilotが必ず守るべき実装ルール
 - **ガイドラインの遵守**: `.github/copilot-instructions.md` に準拠すること。
 - **ターゲットブランチ**: `xxxx` ブランチに対して実装・修正を行うこと。
 - **言語設定**: Pull Request内の説明、コミットメッセージ、コード内のコメントはすべて「日本語」で記述すること。

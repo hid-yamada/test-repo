@@ -1,16 +1,21 @@
-name: "[Copilot対応] 機能リクエスト-yml"
+name: "🤖[Copilot対応] 機能リクエスト-yml"
 description: Copilotを利用してプロジェクトに対する新しい機能を追加する
 title: "[CU-XXXX] 機能名"
 labels: ["enhancement", "copilot-task"]
 body:
-  - type: markdown
+  - type: textarea
+    id: copilot_instructions
     attributes:
+      label: "🤖 Copilotが必ず守るべき実装ルール"
+      description: "Copilotへの具体的な指示やルールです。Issue（タスク）に合わせて必要に応じて編集・追記してください。"
       value: |
-        ### 🤖 Copilotへの指示事項（システムルール）
+        以下のルールは最優先の制約事項です。いかなる場合も必ず遵守してください。
         - **ガイドラインの遵守**: `.github/copilot-instructions.md` に準拠すること。
         - **ターゲットブランチ**: `xxxx` ブランチに対して実装・修正を行うこと。
         - **言語設定**: Pull Request内の説明、コミットメッセージ、コード内のコメントはすべて「日本語」で記述すること。
         - **ブランチ命名規則**: ブランチを作成する際は、必ず `CU-XXXX` （Issueタイトルのプレフィックスと一致）の名称で作成すること。
+    validations:
+      required: true
 
   - type: markdown
     attributes:
