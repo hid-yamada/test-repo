@@ -1,0 +1,132 @@
+name: "🐛 バグ報告-yml"
+description: "不具合の報告"
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "不具合のご報告ありがとうございます。AI（Copilot）がスムーズに原因を特定し修正案を出せるよう、可能な限り詳細にご記入ください。"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "🐛 不具合内容"
+      description: "発生している問題を簡潔に説明してください。"
+      placeholder: "例: ログイン画面で正しいパスワードを入力しても、エラーメッセージが表示されてログインできない。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: "🔄 再現手順"
+      description: "不具合を再現するための手順を番号順に記載してください。"
+      value: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "✅ 期待される動作"
+      description: "本来どう動作すべきかを記載してください。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: "❌ 実際の動作"
+      description: "実際にどう動作しているか（不具合の挙動）を記載してください。"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: server_env
+    attributes:
+      label: "🖥️ サーバー環境"
+      description: "不具合が発生した環境を選択してください（複数選択可）。"
+      options:
+        - label: "production（本番）"
+        - label: "staging（STG）"
+        - label: "development（ローカル）"
+
+  - type: input
+    id: browser
+    attributes:
+      label: "🌐 ブラウザ"
+      placeholder: "例: Chrome 120.0, Safari 17.1"
+    validations:
+      required: false
+
+  - type: input
+    id: os
+    attributes:
+      label: "💻 OS"
+      placeholder: "例: macOS Sonoma, Windows 11"
+    validations:
+      required: false
+
+  - type: input
+    id: branch
+    attributes:
+      label: "🌿 ブランチ"
+      placeholder: "例: main, feature/login-update"
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "📋 エラーログ"
+      description: "コンソールやサーバーのエラーメッセージ、スタックトレースがあれば貼り付けてください。"
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: impact
+    attributes:
+      label: "📊 影響範囲"
+      description: "該当するものをすべて選択してください。"
+      options:
+        - label: "本番環境に影響あり"
+        - label: "ユーザー操作に影響あり"
+        - label: "データ損失の可能性あり"
+        - label: "セキュリティリスクあり"
+        - label: "パフォーマンス劣化"
+
+  - type: textarea
+    id: cause
+    attributes:
+      label: "🔍 原因（判明している場合）"
+      description: "コード内の原因箇所や仮説があれば記載してください。"
+    validations:
+      required: false
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "💡 修正方針（案）"
+      description: "具体的な修正方法の提案があれば記載してください。"
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "📸 スクリーンショット"
+      description: "可能であればスクリーンショットを添付してください。"
+    validations:
+      required: false
+
+  - type: input
+    id: relations
+    attributes:
+      label: "🔗 関連Issue/PR"
+      placeholder: "例: #123, #456"
+    validations:
+      required: false
