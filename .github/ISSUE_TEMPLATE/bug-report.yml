@@ -1,6 +1,6 @@
 name: "🐛 バグ報告"
 description: "不具合の報告"
-title: "[BUG] "
+title: "[BUG] 概要を記入"
 labels: ["bug"]
 body:
   - type: textarea
